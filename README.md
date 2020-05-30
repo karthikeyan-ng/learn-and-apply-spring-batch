@@ -57,3 +57,9 @@ Within the type of this Step there are three main components.
     * `ItemReader` is responsible for all the inputs for this `Step`
     * `ItemProcessor` which is optional; provides any additional transformation / validation / logic that needs to be applied on each Item
     * `ItemWriter` is responsible for output of the Step
+ 
+![alt text](./images/chunk_based_process.png "Chunk Based Processing")
+
+![alt text](./images/chunk_based_process1.png "Chunk Based Process Flow")
+
+![alt text](./images/JobRepo.png "Job Repository Flow")
