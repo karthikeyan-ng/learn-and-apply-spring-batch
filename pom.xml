@@ -24,7 +24,10 @@
 			<artifactId>spring-boot-starter-batch</artifactId>
 		</dependency>
 
-		<!--<dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency><!--<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>
