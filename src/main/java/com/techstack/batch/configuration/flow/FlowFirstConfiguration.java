@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @RequiredArgsConstructor
-@Configuration
+//@Configuration
 public class FlowFirstConfiguration {
 
     public final JobBuilderFactory jobBuilderFactory;
