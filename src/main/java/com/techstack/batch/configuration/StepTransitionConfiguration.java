@@ -10,8 +10,8 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @RequiredArgsConstructor
-@Configuration
-public class StepTranstionConfiguration {
+//@Configuration
+public class StepTransitionConfiguration {
 
     public final JobBuilderFactory jobBuilderFactory;
 
