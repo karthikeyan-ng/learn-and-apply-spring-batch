@@ -63,3 +63,20 @@ Within the type of this Step there are three main components.
 ![alt text](./images/chunk_based_process1.png "Chunk Based Process Flow")
 
 ![alt text](./images/JobRepo.png "Job Repository Flow")
+
+For executing job, Spring Batch expects DB to be configured to maintain a JobRepository. For Test scope, it uses Map based Job store.
+
+```properties
+spring.datasource.driverClassName=com.mysql.jdbc.Driver
+#spring.datasource.schema=schema-mysql
+
+## If you are getting this error Table 'BATCH_JOB_INSTANCE' doesn't exist
+## use this property
+spring.batch.initialize-schema=ALWAYS
+spring.datasource.url=jdbc:mysql://localhost:3306/learn_spring_batch
+spring.datasource.username=root
+spring.datasource.password=root
+```
+
+Spring Batch Tables
+![alt text](./images/spring_batch_tables.png "Job Repository Flow")
