@@ -92,7 +92,7 @@ public class StepTranstionConfiguration {
      * once Step3 FINISHED, move on to next step Step2
      * once Step2 FINISHED, repeat the same Step2
      */
-    @Bean
+    /*@Bean
     public Job transitionJobSimple_Using_Next_ByChangingAndRepeatTheStepOrder() {
         return jobBuilderFactory
                 .get("transitionJobSimple_Using_Next_ByChangingAndRepeatTheStepOrder")
@@ -100,6 +100,75 @@ public class StepTranstionConfiguration {
                 .next(step3())
                 .next(step2())
                 .next(step2())
+                .build();
+    }*/
+
+    /**
+     * Job Construction Scenario - 4
+     *
+     * In this way you can control each Step and it's status. Based on that take
+     * decision to execute NEXT Steps.
+     *
+     * Execute Step1 -> On Complete of Step1 -> move to Step2
+     * From Step2 -> On Complete of Step2 -> move to Step3
+     * From Step3 -> END
+     *
+     * on("COMPLETED") is a kind of exit code from the previous Step
+     * end() is a indicator that tells last step in the flow
+     *
+     */
+    /*@Bean
+    public Job transitionJobSimple_Using_Next_MoreControlledWay() {
+        return jobBuilderFactory
+                .get("transitionJobSimple_Using_Next_MoreControlledWay")
+                .start(step1()).on("COMPLETED").to(step2())
+                .from(step2()).on("COMPLETED").to(step3())
+                .from(step3()).end()
+                .build();
+    }*/
+
+    /**
+     * Job Construction Scenario - 5
+     *
+     * In this way you can control each Step and it's status. Based on that take
+     * decision to execute NEXT Steps.
+     *
+     * Execute Step1 -> On Complete of Step1 -> move to Step2
+     * From Step2 -> On Complete of Step2 -> fail()
+     * From Step3 -> END
+     *
+     * fail() -> once failure occurred, the next steps will not be executed (step3 won't be executed)
+     *
+     */
+    /*@Bean
+    public Job transitionJobSimple_Using_Next_MoreControlledWay_WithFail() {
+        return jobBuilderFactory
+                .get("transitionJobSimple_Using_Next_MoreControlledWay_WithFail")
+                .start(step1()).on("COMPLETED").to(step2())
+                .from(step2()).on("COMPLETED").fail() //even though it is completed it is considered as fail
+                .from(step3()).end()
+                .build();
+    }*/
+
+    /**
+     * Job Construction Scenario - 6
+     *
+     * In this way you can control each Step and it's status. Based on that take
+     * decision to execute NEXT Steps.
+     *
+     * Execute Step1 -> On Complete of Step1 -> move to Step2
+     * From Step2 -> On Complete of Step2 -> stop() or stopAndRestart()
+     *
+     * stopAndRestart() -> will force to restart the job and continue from the Step configured. (ex. step3())
+     *
+     */
+    @Bean
+    public Job transitionJobSimple_Using_Next_MoreControlledWay_WithStopAndRestart() {
+        return jobBuilderFactory
+                .get("transitionJobSimple_Using_Next_MoreControlledWay_WithStopAndRestart")
+                .start(step1()).on("COMPLETED").to(step2())
+                .from(step2()).on("COMPLETED").stopAndRestart(step3())
+                .from(step3()).end()
                 .build();
     }
 }
