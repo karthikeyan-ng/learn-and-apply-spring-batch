@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.task.SimpleAsyncTaskExecutor;
 
 @RequiredArgsConstructor
-@Configuration
+//@Configuration
 public class BatchConfiguration {
 
     private final JobBuilderFactory jobBuilderFactory;
