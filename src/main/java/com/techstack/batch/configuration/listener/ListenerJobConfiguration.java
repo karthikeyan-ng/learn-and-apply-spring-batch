@@ -11,13 +11,12 @@ import org.springframework.batch.item.support.ListItemReader;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
 
 import java.util.Arrays;
 import java.util.List;
 
 @RequiredArgsConstructor
-@Configuration
+//@Configuration
 public class ListenerJobConfiguration {
 
     private final JobBuilderFactory jobBuilderFactory;
@@ -60,8 +59,4 @@ public class ListenerJobConfiguration {
                 .build();
     }
 
-//    @Bean
-//    public JavaMailSender javaMailSender() {
-//        return new JavaMailSenderImpl();
-//    }
 }
