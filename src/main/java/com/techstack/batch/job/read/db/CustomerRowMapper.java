@@ -1,5 +1,6 @@
-package com.techstack.batch.domain;
+package com.techstack.batch.job.read.db;
 
+import com.techstack.batch.domain.Customer;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

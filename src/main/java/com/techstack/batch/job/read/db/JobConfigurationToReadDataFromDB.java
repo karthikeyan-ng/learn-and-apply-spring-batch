@@ -1,7 +1,6 @@
-package com.techstack.batch.job.read;
+package com.techstack.batch.job.read.db;
 
 import com.techstack.batch.domain.Customer;
-import com.techstack.batch.domain.CustomerRowMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
