@@ -1,11 +1,13 @@
 package com.techstack.batch.domain;
 
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.ToString;
 
 import java.util.Date;
 
 @ToString
+@Getter
 @RequiredArgsConstructor
 public class Customer {
 
