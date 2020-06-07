@@ -1,4 +1,4 @@
-package com.techstack.batch.job.integration.message.launch;
+package com.techstack.batch.job.integration.message.informational;
 
 import org.springframework.batch.core.ChunkListener;
 import org.springframework.batch.core.Job;
