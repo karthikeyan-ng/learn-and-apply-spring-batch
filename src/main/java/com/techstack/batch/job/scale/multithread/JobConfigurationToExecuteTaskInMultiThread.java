@@ -12,7 +12,6 @@ import org.springframework.batch.item.database.JdbcBatchItemWriter;
 import org.springframework.batch.item.database.JdbcPagingItemReader;
 import org.springframework.batch.item.database.Order;
 import org.springframework.batch.item.database.support.MySqlPagingQueryProvider;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.task.SimpleAsyncTaskExecutor;
@@ -25,14 +24,11 @@ import java.util.Map;
 @RequiredArgsConstructor
 public class JobConfigurationToExecuteTaskInMultiThread {
 
-    @Autowired
-    public JobBuilderFactory jobBuilderFactory;
+    public final JobBuilderFactory jobBuilderFactory;
 
-    @Autowired
-    public StepBuilderFactory stepBuilderFactory;
+    public final StepBuilderFactory stepBuilderFactory;
 
-    @Autowired
-    public DataSource dataSource;
+    public final DataSource dataSource;
 
     @Bean
     public JdbcPagingItemReader<Customer> pagingItemReader() {
